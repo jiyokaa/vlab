@@ -18,6 +18,8 @@ class CreateComputersTable extends Migration
             $table->string('name');
             $table->string('ip');
             $table->string('link');
+            $table->boolean('is_available')->default('1');
+            $table->boolean('is_use_by')->nullable()->default(NULL);
             $table->integer('lab_id')->unsigned()->index();
             $table->foreign('lab_id')->references('id')->on('labs');
             $table->timestamps();

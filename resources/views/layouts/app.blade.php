@@ -15,6 +15,7 @@
 
     <!-- Font Awasome -->
     <link href="{{ asset('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+
 </head>
 <body>
     <div id="app">

@@ -9,7 +9,7 @@ class Computer extends Model
     //
     protected $table = 'computers'; //กำหนดชื่อตาราง
 
-    protected $fillable = ['name','ip','link','lab_id'];//Mass Assignment
+    protected $fillable = ['name','ip','link','is_available','lab_id'];//Mass Assignment
 
     public function lab(){
 

@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/','LabController@index');
 
 Route::get('labs','LabController@index');
 Route::resource('labs','LabController');

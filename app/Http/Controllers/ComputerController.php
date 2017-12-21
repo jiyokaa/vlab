@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use App\Computer;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class ComputerController extends Controller
 {
@@ -58,25 +58,31 @@ class ComputerController extends Controller
      */
     public function show($id)
     {
-        //
-        function checkExternalFile($url)
-        {
-            $ch = curl_init($url);
-            curl_setopt($ch, CURLOPT_NOBODY, true);
-            curl_exec($ch);
-            $retCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-            curl_close($ch);
+        // check respond code file
+        // 
+        // 
+        //         
+        // function checkExternalFile($url)
+        // {
+        //     $ch = curl_init($url);
+        //     curl_setopt($ch, CURLOPT_NOBODY, true);
+        //     curl_exec($ch);
+        //     $retCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        //     curl_close($ch);
         
-            return $retCode;
-        }
-        $computer = Computer::find($id);
+        //     return $retCode;
+        // }
+        // $computer = Computer::find($id);
         
-        $fileExists = checkExternalFile($computer->link);
-        echo $fileExists;
+        // $fileExists = checkExternalFile($computer->link);
+        // echo $fileExists;
+
+
         // $computers = DB::table('computers')->where('lab_id', $id)->get();
-        // return view('computers.show',[
-        //                 'computer'=>$computer
-        //                 ]);
+        $computer = Computer::find($id);
+        return view('computers.show',[
+                        'computer'=>$computer
+                        ]);
     }
 
     /**

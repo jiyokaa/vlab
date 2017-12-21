@@ -1,11 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.4col')
 
 @section('content')
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Create Computer Page</div>
+
+                <h1 class="my-4">Create Computer Page</h1>
 
                 <div class="panel-body">
 
@@ -38,9 +36,7 @@
 
                 {!! Form::close() !!}
                     
-                </div>
-            </div>
-        </div>
+
     </div>
 </div>
 @endsection

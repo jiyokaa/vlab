@@ -21,6 +21,13 @@ class DatabaseSeeder extends Seeder
     $user->timestamps;
     $user->save();
 
+    $user = new App\User();
+    $user->name = 'User';
+    $user->email = 'user@user.com';
+    $user->password = Hash::make('1234');
+    $user->type = 'User';
+    $user->timestamps;
+    $user->save();
 
     $lab = new App\Lab();
     $lab->name = 'BKD3201';
@@ -31,10 +38,18 @@ class DatabaseSeeder extends Seeder
     $computer = new App\Computer();
     $computer->name = 'Computer 1';
     $computer->ip = '10.10.99.2';
-    $computer->link = '#';
+    $computer->link = 'http://192.168.10.102/vcl/#/client/TGFiMDEAYwBub2F1dGg=';
+    $computer->is_available = '1';
     $computer->lab_id = '1';
     $computer->save();
 
+    $computer = new App\Computer();
+    $computer->name = 'Computer 2';
+    $computer->ip = '10.10.99.2';
+    $computer->link = 'http://192.168.10.102/vcl/#/client/TGFiMDIAYwBub2F1dGg=';
+    $computer->is_available = '1';
+    $computer->lab_id = '1';
+    $computer->save();
     }
 
 }

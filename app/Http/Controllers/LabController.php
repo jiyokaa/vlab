@@ -63,7 +63,7 @@ class LabController extends Controller
         // *** โชว์ทุกอันที่มีไอดีเข้ามา
         $lab = Lab::find($id);
 
-        $computers = DB::table('computers')->where('lab_id', $id)->get();
+        $computers = DB::table('computers')->where('lab_id', $id)->paginate(8);
         return view('labs.show',[
                         'computers'=>$computers,
                         'lab'=>$lab
