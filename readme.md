@@ -17,7 +17,7 @@ This README would normally document whatever steps are necessary to get your app
 * How to run tests
 * Deployment instructions
 
-git clone 
+git clone https://jiyokaa@bitbucket.org/jiyokaa/vlab.git
 
 composer install
 
