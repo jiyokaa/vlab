@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Computer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+// use
 
 class ComputerController extends Controller
 {
@@ -122,5 +123,20 @@ class ComputerController extends Controller
         return redirect()->action('LabController@show', ['id' => $computer->lab_id])->with('status', 'Delete Computer Done');
     }
 
-   
+    public function reserve(Request $request, $id)
+    {
+        //
+        if (Auth::check())
+        {
+            // The user is logged in...
+            $computer = Computer::find($id);
+            //update ค่า avilable และ user
+            $computer->is_available = '0';
+            $computer->is_use_by = Auth::id;
+            dd();
+        }
+
+    }
+    
+    
 }

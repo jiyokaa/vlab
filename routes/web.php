@@ -20,6 +20,8 @@ Route::get('/','LabController@index');
 Route::get('labs','LabController@index');
 Route::resource('labs','LabController');
 Route::resource('computers','ComputerController');
+
+Route::get('reserve','ComputerController@reserve');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
