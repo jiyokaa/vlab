@@ -5,7 +5,7 @@
 ### How do I get set up? ###
 
 
-git clonehttps://github.com/jiyokaa/vlab
+git clone https://github.com/jiyokaa/vlab
 
 composer install
 
